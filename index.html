@@ -1,1 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get Location</title>
+</head>
+<body>
+
+    <h2>Get Current Latitude & Longitude</h2>
+    <button onclick="getLocation()">Get Location</button>
+
+    <p id="output"></p>
+
+    <script>
+        function getLocation() {
+
+            // Check if geolocation is supported
+console.log("Supported:", "geolocation" in navigator);
+
+// Get current position
+navigator.geolocation.getCurrentPosition(
+  (position) => {
+    console.log("Latitude:", position.coords.latitude);
+    console.log("Longitude:", position.coords.longitude);
+    console.log("Accuracy:", position.coords.accuracy, "meters");
+  },
+  (error) => {
+    console.error("Error:", error.message);
+  }
+);
+            const output = document.getElementById("output");
+
+            if (navigator.geolocation) {
+                console.log("hello")
+                navigator.geolocation.getCurrentPosition(
+                    
+                    function(position) {
+                        const latitude = position.coords.latitude;
+                        const longitude = position.coords.longitude;
+                        console.log(latitude);
+                        console.log(longitude);
+                        output.innerHTML = 
+                            "Latitude: " + latitude + "<br>" +
+                            "Longitude: " + longitude;
+                    },
+                    function(error) {
+                        output.innerHTML = "Error: " + error.message;
+                    }
+                );
+            } else {
+                output.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+    </script>
+</body>
+</html>
 

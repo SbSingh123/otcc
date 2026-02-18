@@ -1,59 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Get Location</title>
+    <title>Location Test</title>
 </head>
 <body>
-
-    <h2>Get Current Latitude & Longitude</h2>
+    <h2>Location Finder</h2>
     <button onclick="getLocation()">Get Location</button>
-
-    <p id="output"></p>
+    <div id="result"></div>
 
     <script>
-
-                    // Check if geolocation is supported
-console.log("Supported:", "geolocation" in navigator);
-
-// Get current position
-navigator.geolocation.getCurrentPosition(
-  (position) => {
-    console.log("Latitude:", position.coords.latitude);
-    console.log("Longitude:", position.coords.longitude);
-    console.log("Accuracy:", position.coords.accuracy, "meters");
-  },
-  (error) => {
-    console.error("Error:", error.message);
-  }
-);
-        
         function getLocation() {
-
-
-            const output = document.getElementById("output");
-
-            if (navigator.geolocation) {
-                console.log("hello")
-                navigator.geolocation.getCurrentPosition(
-                    
-                    function(position) {
-                        const latitude = position.coords.latitude;
-                        const longitude = position.coords.longitude;
-                        console.log(latitude);
-                        console.log(longitude);
-                        output.innerHTML = 
-                            "Latitude: " + latitude + "<br>" +
-                            "Longitude: " + longitude;
-                    },
-                    function(error) {
-                        output.innerHTML = "Error: " + error.message;
-                    }
-                );
-            } else {
-                output.innerHTML = "Geolocation is not supported by this browser.";
+            document.getElementById("result").innerHTML = "Fetching...";
+            
+            if (!navigator.geolocation) {
+                document.getElementById("result").innerHTML = "Not Supported!";
+                return;
             }
+
+            navigator.geolocation.getCurrentPosition(
+                (pos) => {
+                    document.getElementById("result").innerHTML = `
+                        ✅ Success!<br>
+                        Latitude: ${pos.coords.latitude}<br>
+                        Longitude: ${pos.coords.longitude}<br>
+                        Accuracy: ${pos.coords.accuracy} meters
+                    `;
+                },
+                (err) => {
+                    document.getElementById("result").innerHTML = `
+                        ❌ Error Code: ${err.code}<br>
+                        Message: ${err.message}
+                    `;
+                },
+                {
+                    enableHighAccuracy: true,
+                    timeout: 15000,
+                    maximumAge: 0
+                }
+            );
         }
     </script>
 </body>
 </html>
-

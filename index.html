@@ -1,44 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Location Test</title>
-</head>
-<body>
-    <h2>Location Finder</h2>
-    <button onclick="getLocation()">Get Location</button>
-    <div id="result"></div>
+<HTML>
+<!-- Created by HTTrack Website Copier/3.49-2 [XR&CO'2014] -->
 
-    <script>
-        function getLocation() {
-            document.getElementById("result").innerHTML = "Fetching...";
-            
-            if (!navigator.geolocation) {
-                document.getElementById("result").innerHTML = "Not Supported!";
-                return;
-            }
+<!-- Mirrored from www.otccoin.site/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Feb 2026 06:53:26 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=UTF-8"><META HTTP-EQUIV="Refresh" CONTENT="0; URL=Trade/tradelist.html"><TITLE>Page has moved</TITLE>
+</HEAD>
+<BODY>
+<A HREF="Trade/tradelist.html"><h3>Click here...</h3></A>
+</BODY>
+<!-- Created by HTTrack Website Copier/3.49-2 [XR&CO'2014] -->
 
-            navigator.geolocation.getCurrentPosition(
-                (pos) => {
-                    document.getElementById("result").innerHTML = `
-                        ✅ Success!<br>
-                        Latitude: ${pos.coords.latitude}<br>
-                        Longitude: ${pos.coords.longitude}<br>
-                        Accuracy: ${pos.coords.accuracy} meters
-                    `;
-                },
-                (err) => {
-                    document.getElementById("result").innerHTML = `
-                        ❌ Error Code: ${err.code}<br>
-                        Message: ${err.message}
-                    `;
-                },
-                {
-                    enableHighAccuracy: true,
-                    timeout: 15000,
-                    maximumAge: 0
-                }
-            );
-        }
-    </script>
-</body>
-</html>
+<!-- Mirrored from www.otccoin.site/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Feb 2026 06:53:27 GMT -->
+</HTML>

